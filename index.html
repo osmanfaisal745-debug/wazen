@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monthly Splitter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1><span class="brand">Wazen</span> Monthly Splitter</h1>
+      <p class="subtitle">Give each month a purpose — split your income into buckets.</p>
+    </header>
+
+    <div class="form-row">
+      <label>Monthly Income
+        <input id="income" type="number" min="0" step="0.01" value="0" />
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Country
+        <input id="country" list="countries-list" placeholder="Type or choose your country" />
+        <datalist id="countries-list">
+          <option>United States</option>
+          <option>United Kingdom</option>
+          <option>Canada</option>
+          <option>Australia</option>
+          <option>India</option>
+          <option>Pakistan</option>
+          <option>Germany</option>
+          <option>France</option>
+          <option>Japan</option>
+          <option>China</option>
+          <option>Brazil</option>
+          <option>Mexico</option>
+          <option>Nigeria</option>
+          <option>South Africa</option>
+          <option>Egypt</option>
+          <option>United Arab Emirates</option>
+          <option>Saudi Arabia</option>
+          <option>Indonesia</option>
+          <option>Philippines</option>
+          <option>Turkey</option>
+          <option>Spain</option>
+          <option>Italy</option>
+          <option>Netherlands</option>
+          <option>Sweden</option>
+          <option>Norway</option>
+          <option>Argentina</option>
+          <option>Chile</option>
+          <option>Colombia</option>
+          <option>Russia</option>
+          <option>South Korea</option>
+          <option>Vietnam</option>
+          <option>Other</option>
+        </datalist>
+      </label>
+    </div>
+
+    <div class="add">
+      <input id="bucketName" placeholder="Bucket name" />
+      <input id="bucketPercent" type="number" min="0" max="100" step="0.1" placeholder="Percent" />
+      <button id="addBucket">Add Bucket</button>
+    </div>
+
+    <div id="summary">
+      <div class="progress">
+        <div class="progress-fill" id="allocBar" style="width:0%"></div>
+      </div>
+      <p>Total Allocated: <strong id="totalPercent">0%</strong> (<strong id="totalAmount">$0.00</strong>) — Remaining: <strong id="remainingPercent">100%</strong> (<strong id="remainingAmount">$0.00</strong>)</p>
+    </div>
+
+    <div id="countrySuggestion" class="suggestion">
+      <h3>Suggestions for <span id="countryName">your country</span></h3>
+      <ul id="suggestionsList"></ul>
+      <div class="suggest-actions">
+        <button id="applySuggestions">Apply Suggestions</button>
+      </div>
+    </div>
+
+    <table id="buckets">
+      <thead>
+        <tr><th>Bucket</th><th>%</th><th>Amount</th><th></th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="controls">
+      <button id="reset" class="secondary">Reset All</button>
+    </div>
+  </div>
+
+    <!-- AI Assistant removed -->
+
+  <footer id="footer-credit">made by osman</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
